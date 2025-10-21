@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Interactive Styled Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            margin: 40px;
+        }
+        h1 {
+            color: #2c3e50;
+            cursor: pointer; /* pointer cursor to show clickable */
+        }
+        h2 {
+            color: #34495e;
+        }
+        p {
+            font-size: 18px;
+            line-height: 1.5;
+            color: #555;
+        }
+        a {
+            color: #2980b9;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="main-heading">Welcome to My Page</h1>
+    <h2>About This Page</h2>
+    
+
+    <script>
+        const heading = document.getElementById('main-heading');
+        heading.addEventListener('click', () => {
+            heading.textContent = "You clicked the heading!";
+            heading.style.color = '#e74c3c';
+        });
+    </script>
+</body>
+</html>
