@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Mywebsite</title>
   <style>
     body {
@@ -14,40 +14,18 @@
       padding: 0;
     }
 
-    nav {
-      background-color: #007acc;
-      padding: 15px;
-      text-align: center;
-    }
-
-    nav a {
-      color: white;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
-    }
-
     .container {
-      max-width: 800px;
-      margin: 50px auto;
-      padding: 30px;
-      border-radius: 8px;
+      max-width: 500px;
+      margin: 40px auto;
+      padding: 20px;
+      border-radius: 5px;
       text-align: center;
-
-      
       background-image: url('https://img.freepik.com/premium-vector/seamless-red-brick-wall-pixel-art-patttern_6070-239.jpg?w=2000');
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
-
-      
       background-color: rgba(255, 255, 255, 0.85);
       background-blend-mode: lighten;
-
       box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
     }
 
@@ -65,15 +43,6 @@
       line-height: 1.6;
     }
 
-    a {
-      color: #cc0000;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
     button {
       background-color: #007acc;
       color: white;
@@ -88,6 +57,28 @@
 
     button:hover {
       background-color: #005f99;
+    }
+
+    input[type="text"], input[type="password"] {
+      width: 80%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+
+    .message {
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    .error {
+      color: red;
+    }
+
+    .success {
+      color: green;
     }
 
     img {
@@ -109,8 +100,6 @@
 </head>
 <body>
 
-  
-
   <div class="container">
     <h1>Hello!</h1>
 
@@ -119,16 +108,42 @@
     <h2>START!</h2>
     <p id="info">Click the button to change this text!</p>
 
-    <button onclick="changeText()">Click me to start</button>
+    <button id="startBtn" onclick="showLoginForm()">Click me to start</button>
   </div>
 
-  <footer>
-    &copy; 2025 Khyle Ahron Kindom | All rights reserved.
-  </footer>
+  
 
   <script>
-    function changeText() {
-      document.getElementById("info").innerText = "You Clicked The Button!";
+    function showLoginForm() {
+      const container = document.querySelector('.container');
+      container.innerHTML = `
+        <h1>Login</h1>
+        <input type="text" id="username" placeholder="Name" />
+        <input type="password" id="password" placeholder="Password" />
+        <button onclick="authenticate()">Sign In</button>
+        <p id="message" class="message"></p>
+      `;
+    }
+
+    function authenticate() {
+      const username = document.getElementById('username').value.trim();
+      const password = document.getElementById('password').value.trim();
+      const messageEl = document.getElementById('message');
+
+      if (!username || !password) {
+        messageEl.textContent = 'Please enter both Name and Password.';
+        messageEl.className = 'message error';
+        return;
+      }
+
+      
+      if (username === "admin" && password === "1234") {
+        
+        window.location.href = `web.html?user=${encodeURIComponent(username)}`;
+      } else {
+        messageEl.textContent = 'Invalid Name or Password. Please try again.';
+        messageEl.className = 'message error';
+      }
     }
   </script>
 
