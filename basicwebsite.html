@@ -2,29 +2,57 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Welcome to My First Web Page</title>
+  <title>Mywebsite</title>
   <style>
-
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(to right, #e0f7fa, #fffde7);
-      color: #333;
+      background-image: url('http://pixelartmaker.com/art/a0d92e1f337c491.png');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
       margin: 0;
       padding: 0;
+    }
+
+    nav {
+      background-color: #007acc;
+      padding: 15px;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
     }
 
     .container {
       max-width: 800px;
       margin: 50px auto;
-      background-color: #ffffff;
       padding: 30px;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
       border-radius: 8px;
+      text-align: center;
+
+      
+      background-image: url('https://img.freepik.com/premium-vector/seamless-red-brick-wall-pixel-art-patttern_6070-239.jpg?w=2000');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+
+      
+      background-color: rgba(255, 255, 255, 0.85);
+      background-blend-mode: lighten;
+
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
     }
 
     h1 {
       color: #007acc;
-      text-align: center;
     }
 
     h2 {
@@ -55,10 +83,18 @@
       cursor: pointer;
       border-radius: 4px;
       margin-top: 15px;
+      display: inline-block;
     }
 
     button:hover {
       background-color: #005f99;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+      margin: 20px auto;
+      border-radius: 10px;
     }
 
     footer {
@@ -66,28 +102,35 @@
       text-align: center;
       font-size: 14px;
       color: #777;
+      padding: 20px 0;
+      background-color: #f0f0f0;
     }
   </style>
 </head>
 <body>
+
+  
+
   <div class="container">
-    <h1>Welcome to My Page</h1>
+    <h1>Hello!</h1>
 
-    <h2>About This Page</h2>
-    <p id="info">You click the button!</p>
+    <img src="https://img.freepik.com/premium-vector/pixels-8-bit-theme-welcome-banner-vector-illustration_671488-26.jpg?w=740" alt="Welcome Image">
 
-    <button onclick="changeText()">Click Me to Change the Text</button>
+    <h2>START!</h2>
+    <p id="info">Click the button to change this text!</p>
 
-    
-    
-
-    
+    <button onclick="changeText()">Click me to start</button>
   </div>
+
+  <footer>
+    &copy; 2025 Khyle Ahron Kindom | All rights reserved.
+  </footer>
 
   <script>
     function changeText() {
-      document.getElementById("info").innerText = "The text has been changed:>!";
+      document.getElementById("info").innerText = "You Clicked The Button!";
     }
   </script>
+
 </body>
 </html>
